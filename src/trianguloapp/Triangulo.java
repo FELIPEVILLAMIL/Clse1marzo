@@ -29,8 +29,10 @@ public class Triangulo {
         public double CalcularArea(){
             double a=Math.sqrt(Math.pow(this.p1.getX()-this.p2.getX(), 2)+Math.pow(this.p1.getY()-this.p2.getY(), 2));
             double b=calcularDist(this.p2,this.p3);
-            double c=  calcularDist(this.p3,this.p1);          
-            return 0;
+            double c=  calcularDist(this.p3,this.p1); 
+            double p=(a+b+c)/2;
+            double area=Math.sqrt(p*(p-a)*(p-b)*(p-c));
+            return area;
         }
         private double calcularDist(Punto a,Punto b){
             double res=Math.sqrt(Math.pow(a.getX()-b.getX(), 2)+Math.pow(a.getY()-b.getY(), 2));
